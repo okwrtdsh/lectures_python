@@ -1,115 +1,285 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+    <title>reveal.js – The HTML Presentation Framework</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section data-markdown>
-					<script type="text/template">
-						Configurationサンプル1
-					</script>
-				</section>
-				<section>
-					<section data-markdown>
-						<script type="text/template">
-							Configurationサンプル2_1
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							Configurationサンプル2_2
-						</script>
-					</section>
-					<section data-markdown>
-						<script type="text/template">
-							- Fragment 1 <!-- .element: class="fragment" data-fragment-index="2" -->
-							- Fragment 2 <!-- .element: class="fragment" data-fragment-index="1" -->
-						</script>
-					</section>
-				</section>
-			</div>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section data-markdown>
+          <script type="text/template">
+            # Python講習会2016
+            [@okwrtdsh](http://twitter.com/okwrtdsh)
+          </script>
+        </section>
 
-		</div>
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Pythonプログラムの実行
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Pythonの実行方法
+              - インタラクティブシェルを使う
+              - PYファイルを作成し実行する
+            </script>
+          </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+          <section data-markdown>
+            <script type="text/template">
+              ### Pythonの実行方法
+              - インタラクティブシェルを使う
+              - PYファイルを作成し実行する
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### インタラクティブシェル
+              1. Terminalを開く
+              2. `python3`と入力
+              3. Pythonコードを入力
+              4. `exit()`と入力
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Hello World!を書いてみよう
+              1. Terminalを開く
+              2. `python3`と入力
+              3. `print('Hello World!')`と入力
+              4. `Hello World!`と出力される
+              5. `exit()`と入力
+            </script>
+          </section>
 
-		<script>
+          <section data-markdown>
+            <script type="text/template">
+              ### PYファイルを作成し実行する
+              1. text editorを開く
+              2. Pythonコードを入力
+              3. `OO.py`と名前を付けて保存
+              4. Terminalを開く
+              5. `python3 OO.py`と入力
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Hello World!を書いてみよう
+              1. text editorを開く
+              2. `print('Hello World!')`と入力
+              3. `OO.py`と名前を付けて保存
+              4. Terminalを開く
+              5. `python3 OO.py`と入力
+              6. `Hello World!`と出力される
+            </script>
+          </section>
+        </section>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,                 // 右下のコントロールを非表示
-				progress: false,                 // 下部の進捗バーを非表示
-				slideNumber: true,               // 右下にスライドのページ番号を表示
-				history: true,                   // 各ページをブラウザの履歴に残す
-				overview: false,                 // Escで表示できる「概要」ページを表示不可にする
-				center: false,                   // スライドの垂直方向中央表示をしない（上寄せになる）
-				touch: false,                    // タッチ操作を無効化
-				loop: true,                      // スライドをループさせる
-				rtl: true,                       // 右から左へのスライド
-				fragments: false,                // fragmentsを無効化する
-				autoSlide: 5000,                 // 自動スライドをミリ秒単位で設定。デフォルトは0（自動スライドしない）
-				autoSlideStoppable: true,        // 左下の自動スライド停止用のボタンを非表示にする
-				mouseWheel: true,                // マウスのホイールによるスライドを可能にする
-				transition: 'cube',              // キューブ状の transition でスライドを動作させる
-				                                 // 設定値 default/cube/page/concave/zoom/linear/fade/none
-				transitionSpeed: 'slow',         // スライド速度を遅く設定。 設定値 default/fast/slow
-				// 視差背景の画像URL設定
-				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// 視差背景のサイズを設定
-				parallaxBackgroundSize: '2100px 1024x',
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## タイプとオブジェクト
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### タイプとオブジェクト
+              - Pythonでは，全てのデータはオブジェクトとして作られる
+              - タイプ(型)というのは，オブジェクトの種類のこと
+                1. 数値
+                2. 文字列
+                3. リスト
+                4. タプル
+                5. 辞書型
+                6. 集合型
+            </script>
+          </section>
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          <section data-markdown>
+            <script type="text/template">
+              ### 1. 数値
+              - 整数型，浮動小数点型などに加え，複素数型なども扱うことができる
+              - 演算子
+                * 足し算 $\cdots$ `+`
+                * 引き算 $\cdots$ `-`
+                * 掛け算 $\cdots$ `*`
+                * 割り算 $\cdots$ `/`
+                * 剰余 $\cdots$ `%`
+                * 指数 $\cdots$ `**`
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 1. 数値
+              ```python
+              >>> 1 + 2
+              3
+              >>> 1 - 2
+              -1
+              >>> 2 * 3
+              6
+              >>> 2 ** 3
+              8
+              >>> 10 % 3
+              1
+              >>> 10 / 3
+              3.3333333333333335
+              >>> 10 // 3
+              3
+              ```
+            </script>
+          </section>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+          <section data-markdown>
+            <script type="text/template">
+              ### 2. 文字列
+              - 文字列は「"」または「'」で記述する
+              - 複数行は「"""」または「'''」で記述する
+              - 文字列の結合は「+」
+              - 文字列の繰り返しは「*」
+              - 文字列中の文字へはインデックスでアクセス可能
+              - 文字れるの長さはlen関数で求められる
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 2. 文字列
+              ```python
+              >>> a = "hoge"
+              >>> a
+              'hoge'
+              >>> """hoge
+              ... fuga
+              ... """
+              'hoge\nfuga\n'
+              >>> a * 2
+              'hogehoge'
+              >>> a[0]
+              'h'
+              >>> a[-1]
+              'e'
+              >>> len(a)
+              4
+              ```
+            </script>
+          </section>
 
-		</script>
+          <section data-markdown>
+            <script type="text/template">
+              ### 3. リスト
+              - 文字列は「[」と「]」で記述する
+              - リスト内の要素へのインデックスを用いてアクセス可能
+              - 末尾に要素を追加する時はappend関数を用いる
+              - 末尾の要素を取り出すにはpop関数を用いる
+              - 要素数を取得するにはlen関数を用いる
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 3. リスト
+              ```python
+              >>> a = [6, 1, 2]
+              >>> a[0]
+              6
+              >>> a.append(3)
+              >>> a
+              [6, 1, 2, 3]
+              >>> a.pop()
+              3
+              >>> a
+              [6, 1, 2]
+              >>> len(a)
+              3
+              >>> sum(a)
+              9
+              ```
+            </script>
+          </section>
+        </section>
+      </div>
 
-	</body>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,                  // 右下のコントロールを非表示
+        progress: false,                 // 下部の進捗バーを非表示
+        slideNumber: true,               // 右下にスライドのページ番号を表示
+        history: true,                   // 各ページをブラウザの履歴に残す
+        overview: false,                 // Escで表示できる「概要」ページを表示不可にする
+        center: false,                   // スライドの垂直方向中央表示をしない（上寄せになる）
+        touch: false,                    // タッチ操作を無効化
+        loop: true,                      // スライドをループさせる
+        rtl: false,                      // 右から左へのスライド
+        fragments: false,                // fragmentsを無効化する
+        autoSlide: 5000,                 // 自動スライドをミリ秒単位で設定。デフォルトは0（自動スライドしない）
+        autoSlideStoppable: true,        // 左下の自動スライド停止用のボタンを非表示にする
+        mouseWheel: true,                // マウスのホイールによるスライドを可能にする
+        transition: 'cube',              // キューブ状の transition でスライドを動作させる
+                                         // 設定値 default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'slow',         // スライド速度を遅く設定。 設定値 default/fast/slow
+        // 視差背景の画像URL設定
+        parallaxBackgroundImage: 'img/yakei.jpg',
+        // 視差背景のサイズを設定
+        parallaxBackgroundSize: '2100px 1024x',
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/math/math.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
