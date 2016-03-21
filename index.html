@@ -203,7 +203,7 @@
           <section data-markdown>
             <script type="text/template">
               ### 3. リスト
-              - 文字列は「[」と「]」で記述する
+              - リストは「[」と「]」で記述する
               - リスト内の要素へのインデックスを用いてアクセス可能
               - 末尾に要素を追加する時はappend関数を用いる
               - 末尾の要素を取り出すにはpop関数を用いる
@@ -231,7 +231,137 @@
               ```
             </script>
           </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### 4. タプル
+              - タプルは「(」と「)」で記述する
+              - 要素数が一つの場合は「,」が必要
+              - タプル内の要素へのインデックスを用いてアクセス可能
+              - 要素数と同じ数の変数に各要素を一度に代入できる
+              - 要素への値の代入はできない(一度定義したタプルは変更できない)
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 4. タプル
+              ```python
+              >>> t = (7, "hoge")
+              >>> t
+              (7, 'hoge')
+              >>> (1)
+              1
+              >>> (1, )
+              (1,)
+              >>> t[0]
+              7
+              >>> t[1]
+              'hoge'
+              >>> i, v = t
+              >>> i
+              7
+              >>> v
+              'hoge'
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### 5. 辞書
+              - 辞書は「{」と「}」で記述する
+              - keyとvalueをペアで保持することができる
+              - keyを使ってvalueにアクセスできる
+              - keyが存在しない場合KeyErrorが発生する
+              - get関数を使うとkeyが存在すればvalueを,なければでdefault値を返す
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 5. 辞書
+              ```python
+              >>> d = {
+              ...     "key": "value",
+              ...     "num": 1,
+              ... }
+              >>> d["key"]
+              'value'
+              >>> d["num"]
+              1
+              >>> d["num"] = 2
+              >>> d["num"]
+              2
+              >>> "key" in d.keys()
+              True
+              >>> "hoge" in d.keys()
+              False
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 5. 辞書
+              ```python
+              >>> "value" in d.values()
+              True
+              >>> "hoge" in d.values()
+              False
+              >>> d["hoge"]
+              Traceback (most recent call last):
+              File "<stdin>", line 1, in <module>
+              KeyError: 'hoge'
+              >>> d.get("key")
+              'value'
+              >>> d.get("hoge")  # Noneが返る
+              >>> d.get("hgoe", "default")
+              'default'
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### 6. 集合型(set)
+              - 順序付けされていないユニークな要素で構成されたコレクション
+              - 文字列またはリストから作成する
+              - setの演算子
+                1. `-` $\cdots$要素の削除
+                2. `|` $\cdots$要素の和
+                3. `&` $\cdots$両方に含まれる要素
+                4. `^` $\cdots$一方に含まれる要素
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 6. 集合型(set)
+              ```python
+              >>> A = set("Hello")
+              >>> A
+              {'H', 'e', 'o', 'l'}
+              >>> B = set("World")
+              >>> B
+              {'l', 'd', 'o', 'r', 'W'}
+              >>> A - B
+              {'H', 'e'}
+              >>> A | B
+              {'o', 'l', 'd', 'W', 'H', 'r', 'e'}
+              >>> A & B
+              {'o', 'l'}
+              >>> A ^ B
+              {'d', 'W', 'H', 'r', 'e'}
+              ```
+            </script>
+          </section>
         </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## 制御文
+            </script>
+          </section>
+        </section>
+
       </div>
 
     </div>
