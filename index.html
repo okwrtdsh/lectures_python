@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js – The HTML Presentation Framework</title>
+    <title>Python講習会2016</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -93,9 +93,9 @@
               ### PYファイルを作成し実行する
               1. text editorを開く
               2. Pythonコードを入力
-              3. `OO.py`と名前を付けて保存
+              3. `hoge.py`と名前を付けて保存
               4. Terminalを開く
-              5. `python3 OO.py`と入力
+              5. `python3 hoge.py`と入力
             </script>
           </section>
           <section data-markdown>
@@ -103,9 +103,9 @@
               ### Hello World!を書いてみよう
               1. text editorを開く
               2. `print('Hello World!')`と入力
-              3. `OO.py`と名前を付けて保存
+              3. `hello_world.py`と名前を付けて保存
               4. Terminalを開く
-              5. `python3 OO.py`と入力
+              5. `python3 hello_world.py`と入力
               6. `Hello World!`と出力される
             </script>
           </section>
@@ -248,7 +248,7 @@
         progress: false,                 // 下部の進捗バーを非表示
         slideNumber: true,               // 右下にスライドのページ番号を表示
         history: true,                   // 各ページをブラウザの履歴に残す
-        overview: false,                 // Escで表示できる「概要」ページを表示不可にする
+        overview: true,                  // Escで表示できる「概要」ページを表示不可にする
         center: false,                   // スライドの垂直方向中央表示をしない（上寄せになる）
         touch: false,                    // タッチ操作を無効化
         loop: true,                      // スライドをループさせる
@@ -263,7 +263,8 @@
         // 視差背景の画像URL設定
         parallaxBackgroundImage: 'img/yakei.jpg',
         // 視差背景のサイズを設定
-        parallaxBackgroundSize: '2100px 1024x',
+        //parallaxBackgroundSize: '2100px 1024x',
+        parallaxBackgroundSize: '1280px 800px',
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 
