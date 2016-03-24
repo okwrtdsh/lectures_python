@@ -1,0 +1,3 @@
+[submodule "highlightjs"]
+	path = plugin/highlightjs
+	url = git@github.com:isagalaev/highlight.js.git
