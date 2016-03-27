@@ -56,21 +56,14 @@
           <section data-markdown>
             <script type="text/template">
               ### Pythonの実行方法
-              - インタラクティブシェルを使う
-              - PYファイルを作成し実行する
+              1. インタラクティブシェルを使う
+              2. PYファイルを作成し実行する
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ### Pythonの実行方法
-              - インタラクティブシェルを使う
-              - PYファイルを作成し実行する
-            </script>
-          </section>
-          <section data-markdown>
-            <script type="text/template">
-              ### インタラクティブシェル
+              ### 1. インタラクティブシェル
               1. Terminalを開く
               2. `python3`と入力
               3. Pythonコードを入力
@@ -85,12 +78,19 @@
               3. `print('Hello World!')`と入力
               4. `Hello World!`と出力される
               5. `exit()`と入力
+
+              ```sh
+              $ python3
+              >>> print('Hello World!')
+              Hello World!
+              >>> exit()
+              ```
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ### PYファイルを作成し実行する
+              ### 2. PYファイルを作成し実行する
               1. text editorを開く
               2. Pythonコードを入力
               3. `hoge.py`と名前を付けて保存
@@ -107,6 +107,12 @@
               4. Terminalを開く
               5. `python3 hello_world.py`と入力
               6. `Hello World!`と出力される
+
+              ```sh
+              $ echo "print('Hello World!')" > hello_world.py
+              $ python3 hello_world.py
+              Hello World!
+              ```
             </script>
           </section>
         </section>
