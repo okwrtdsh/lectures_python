@@ -366,6 +366,139 @@
               ## 制御文
             </script>
           </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## 制御文
+              1. 処理の分岐
+                * if
+                * elif
+                * else
+              2. 処理の繰り返し
+                * for
+                * while
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### 1. 処理の分岐
+              - 関係演算子
+                * `<` $\cdots$ より小さい
+                * `<=` $\cdots$ 等しいまたはより小さい
+                * `>` $\cdots$ より大きい
+                * `>=` $\cdots$ 等しいまたはより小さい
+                * `==` $\cdots$ 等しい
+                * `!=` $\cdots$ 異なる
+              - 論理演算子
+                * `and` $\cdots$ かつ
+                * `or` $\cdots$ または
+                * `not` $\cdots$ 否定
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 1. 処理の分岐
+              ```python
+              >>> n = 10
+              >>> if n > 0:
+              ...     print("positive number")
+              ... elif n < 0:
+              ...     print("negative number")
+              ... else:
+              ...     print("zero")
+              ...
+              positive number
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 1. 処理の分岐
+              ```python
+              >>> n = 10
+              >>> if n > 0 and n % 2 == 0:
+              ...     print("positive multiple of two")
+              ... elif n % 2 == 0:
+              ...     print("negative multiple of two")
+              ... elif n > 0:
+              ...     print("positive")
+              ... else:
+              ...     print("negative")
+              ...
+              positive multiple of two
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### 2. 処理の繰り返し
+              - for文
+                * オブジェクトの個数分だけ処理を繰り返す
+
+              ```
+              for 変数 in オブジェクト:
+                  処理
+              ```
+              - while文
+                * 条件式が真である限り処理を繰り返す
+
+              ```
+              while 条件式:
+                  処理
+              ```
+              - range関数
+                * 等差数列を含むリストを生成する関数
+
+              ```
+              range([start,] stop[, step])
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 2. 処理の繰り返し
+              ```python
+              >>> for i in [0, 1, 2]:
+              ...     print(i)
+              ...
+              0
+              1
+              2
+              >>> for i in range(3):
+              ...     print(i)
+              ...
+              0
+              1
+              2
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 2. 処理の繰り返し
+              ```python
+              >>> i = 0
+              >>> while i < 3:
+              ...     print(i)
+              ...     i += 1
+              ...
+              0
+              1
+              2
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## 関数オブジェクト
+            </script>
+          </section>
+
         </section>
 
       </div>
@@ -390,7 +523,7 @@
         loop: true,                      // スライドをループさせる
         rtl: false,                      // 右から左へのスライド
         fragments: false,                // fragmentsを無効化する
-        autoSlide: 5000,                 // 自動スライドをミリ秒単位で設定。デフォルトは0（自動スライドしない）
+        autoSlide: 0,                 // 自動スライドをミリ秒単位で設定。デフォルトは0（自動スライドしない）
         autoSlideStoppable: true,        // 左下の自動スライド停止用のボタンを非表示にする
         mouseWheel: true,                // マウスのホイールによるスライドを可能にする
         transition: 'cube',              // キューブ状の transition でスライドを動作させる
