@@ -32,6 +32,11 @@
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
+    <style type="text/css">
+      .reveal code {
+          font-family: "Consolas", "Courier New", monospace;
+      }
+    </style>
   </head>
 
   <body>
@@ -496,6 +501,80 @@
           <section data-markdown>
             <script type="text/template">
               ## 関数オブジェクト
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 関数の定義
+              - def文
+
+              ```
+              def 関数名(引数1, 引数2, ... ):
+                  処理
+              ```
+              - lambda式
+
+              ```
+              lambda 引数1, 引数2, ... : 引数を使う式
+              ```
+              ### 関数の呼び出し
+              ```python
+              関数名(引数1, 引数2, ... )
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## 関数オブジェクト
+              ```python
+              >>> def add(x, y):
+              ...     return x + y
+              ...
+              >>> add(2, 3)
+              5
+              >>> f = lambda x, y: x + y
+              >>> f(2, 3)
+              5
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## その他
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 型変換
+              - 文字列を整数に $\cdots$ int関数
+              - 整数を文字列に $\cdots$ str関数
+              - リストの要素の型変換 $\cdots$ map関数
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 型変換
+              ```python
+              >>> "2" + "3"
+              '23'
+              >>> int("2") + int("3")
+              5
+              >>> 2 * 3
+              6
+              >>> str(2) * 3
+              '222'
+              >>> a = map(str, [0, 1, 2])
+              >>> a  # python3からリストではなくmap object(iterator)が返る
+              <map object at 0x109b11048>
+              >>> list(a)
+              ['0', '1', '2']
+              >>> b = map(int, ['0', '1', '2'])
+              >>> list(b)
+              [0, 1, 2]
+              ```
             </script>
           </section>
 
