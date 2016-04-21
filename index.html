@@ -48,8 +48,48 @@
         <section data-markdown>
           <script type="text/template">
             # Python講習会2016
-            [@okwrtdsh](http://twitter.com/okwrtdsh)
+            2016/04/23
+
+            かわら[@okwrtdsh](http://twitter.com/okwrtdsh)
           </script>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Pythonって何？
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## Pythonって何？
+              [TIOBE](http://www.tiobe.com/tiobe_index)
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### The Zen of Python
+              1 Beautiful is better than ugly.
+              2 Explicit is better than implicit.
+              3 Simple is better than complex.
+              4 Complex is better than complicated.
+              5 Flat is better than nested.
+              6 Sparse is better than dense.
+              7 Readability counts.
+              8 Special cases aren't special enough to break the rules.
+              9 Although practicality beats purity.
+              10 Errors should never pass silently.
+              11 Unless explicitly silenced.
+              12 In the face of ambiguity, refuse the temptation to guess.
+              13 There should be one-- and preferably only one --obvious way to do it.
+              14 Although that way may not be obvious at first unless you're Dutch.
+              15 Now is better than never.
+              16 Although never is often better than *right* now.
+              17 If the implementation is hard to explain, it's a bad idea.
+              18 If the implementation is easy to explain, it may be a good idea.
+              19 Namespaces are one honking great idea -- let's do more of those!
+            </script>
+          </section>
         </section>
 
         <section>
@@ -577,7 +617,224 @@
               ```
             </script>
           </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### リスト内包表記
+              - 内包表記とは
+                * リストや辞書におけるループ処理をシンプルに書くための表記方
+              - 種類
+                * リスト内包
+                * 辞書内包
+                * セット内包
+                * ジェネレータ式
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### リスト内包表記
+              ```python
+              >>> [i ** 2 for i in range(5)]
+              [0, 1, 4, 9, 16]
+              >>> [i for i in range(10) if i % 2 == 0]
+              [0, 2, 4, 6, 8]
+              >>> [i if i < 5 else 'L' for i in range(10)]
+              [0, 1, 2, 3, 4, 'L', 'L', 'L', 'L', 'L']
+              >>> [i if i < 5 else i if i % 2 == 0 else 'L' for i in range(10)]
+              [0, 1, 2, 3, 4, 'L', 6, 'L', 8, 'L']
+              >>> [x + y for x in range(3) for y in range(3)]
+              [0, 1, 2, 1, 2, 3, 2, 3, 4]
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### リスト内包表記
+              mapやfilterで記述することもできる
+              ```python
+              >>> [i ** 2 for i in range(5)]
+              [0, 1, 4, 9, 16]
+              >>> list(map(lambda x: x ** 2, range(5)))
+              [0, 1, 4, 9, 16]
+              >>> [i for i in range(10) if i % 2 == 0]
+              [0, 2, 4, 6, 8]
+              >>> list(filter(lambda x: x % 2 == 0, range(10)))
+              [0, 2, 4, 6, 8]
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### in
+              特定の要素が含まれるか
+              ```python
+              >>> 3 in range(5)
+              True
+              >>> 'c' in "abcdef"
+              True
+              >>> d = {
+              ...     "key": "value",
+              ...     "num": 1
+              ... }
+              >>> "key" in d
+              True
+              >>> "value" in d.values()
+              True
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 入力
+              ```python
+              >>> s = input()
+              hoge # 入力
+              >>> s
+              'hoge'
+              >>> i = int(input())
+              7 # 入力
+              >>> i
+              7
+              >>> l = input().split()
+              hoge 7 # 入力
+              >>> l
+              ['hoge', '7']
+              >>> l = map(int, input().split())
+              3 3 4 # 入力
+              >>> list(l)
+              [3, 3, 4]
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 出力
+              ```python
+              >>> print("hoge")
+              hoge # 改行あり
+              >>> print("hoge", end="")
+              hoge>>> # 改行なし
+              >>> print("hoge", "fuga")
+              hoge fuga # スペース区切り
+              >>> print(", ".join(["hoge", "fuga"]))
+              hoge, fuga # カンマ区切り
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 注意
+              * keyword引数の評価のタイミング
 
+              ```python
+              >>> def hoge():
+              ...     print("hoge")
+              ...
+              >>> def fuga(x=hoge()):
+              ...     pass
+              ...
+              hoge # 関数の定義時に1回だけ評価される
+              >>> fuga() # 評価されない
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 注意
+              * keyword引数の評価のタイミング
+
+              ```python
+              >>> f = [lambda x: x * i for i in range(5)]
+              >>> f[2](5) # 呼び出した時にはiはすでに4になっている
+              20
+              >>> f[3](5)
+              20
+              >>> f = [lambda x, i=i: x * i for i in range(5)]
+              >>> f[2](5) # keyword引数に渡すと定義時に評価される
+              10
+              >>> f[3](5)
+              15
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 注意
+              * 代入によってローカル変数が作られる
+
+              ```python
+              >>> def outer1():
+              ...     x = 1
+              ...     def inner1():
+              ...         print(x)
+              ...     inner1()
+              ...     print(x)
+              ...
+              >>> outer1()
+              1 # inner1
+              1 # outer1
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 注意
+              * 代入によってローカル変数が作られる
+
+              ```python
+              >>> def outer2():
+              ...     x = 1
+              ...     def inner2():
+              ...         x = 2
+              ...         print(x)
+              ...     inner2()
+              ...     print(x)
+              ...
+              >>> outer2()
+              2 # inner2
+              1 # outer2
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 注意
+              * 変数はすべて参照
+
+              ```python
+              >>> a = list(range(5))
+              >>> a
+              [0, 1, 2, 3, 4]
+              >>> b = a
+              >>> b
+              [0, 1, 2, 3, 4]
+              >>> b[0] = 5
+              >>> b
+              [5, 1, 2, 3, 4]
+              >>> a
+              [5, 1, 2, 3, 4]
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 注意
+              * スライスはコピーを生成
+
+              ```python
+              >>> a = list(range(5))
+              >>> a
+              [0, 1, 2, 3, 4]
+              >>> b = a[:]
+              >>> b
+              [0, 1, 2, 3, 4]
+              >>> b[0] = 5
+              >>> b
+              [5, 1, 2, 3, 4]
+              >>> a
+              [0, 1, 2, 3, 4]
+              ```
+            </script>
+          </section>
         </section>
 
       </div>
@@ -604,7 +861,7 @@
         fragments: false,                // fragmentsを無効化する
         autoSlide: 0,                 // 自動スライドをミリ秒単位で設定。デフォルトは0（自動スライドしない）
         autoSlideStoppable: true,        // 左下の自動スライド停止用のボタンを非表示にする
-        mouseWheel: true,                // マウスのホイールによるスライドを可能にする
+        mouseWheel: false,                // マウスのホイールによるスライドを可能にする
         transition: 'cube',              // キューブ状の transition でスライドを動作させる
                                          // 設定値 default/cube/page/concave/zoom/linear/fade/none
         transitionSpeed: 'slow',         // スライド速度を遅く設定。 設定値 default/fast/slow
