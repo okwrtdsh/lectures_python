@@ -34,7 +34,13 @@
     <![endif]-->
     <style type="text/css">
       .reveal code {
-          font-family: "Consolas", "Courier New", monospace;
+        font-family: "Consolas", "Courier New", monospace;
+      }
+      .reveal section img {
+        margin: 15px 0px;
+        background: none;
+        border: none;
+        box-shadow: none;
       }
     </style>
   </head>
@@ -58,36 +64,73 @@
           <section data-markdown>
             <script type="text/template">
               ## Pythonって何？
+              ![](http://ecx.images-amazon.com/images/I/51tjBN6kkEL._SX374_BO1,204,203,200_.jpg)
             </script>
           </section>
           <section data-markdown>
             <script type="text/template">
-              ## Pythonって何？
-              [TIOBE](http://www.tiobe.com/tiobe_index)
+              ### Pythonはニシキヘビ？
+
+              Pythonの名前の由来はニシキヘビではない。
+              BBC のコメディシリーズ[***“Monty Python’s Flying Circus”***](https://en.wikipedia.org/wiki/Monty_Python)が由来らしい。
+              ([Why is it called Python?](https://docs.python.org/3/faq/general.html#why-is-it-called-python))
             </script>
           </section>
           <section data-markdown>
             <script type="text/template">
-              ### The Zen of Python
-              1 Beautiful is better than ugly.
-              2 Explicit is better than implicit.
-              3 Simple is better than complex.
-              4 Complex is better than complicated.
-              5 Flat is better than nested.
-              6 Sparse is better than dense.
-              7 Readability counts.
-              8 Special cases aren't special enough to break the rules.
-              9 Although practicality beats purity.
-              10 Errors should never pass silently.
-              11 Unless explicitly silenced.
-              12 In the face of ambiguity, refuse the temptation to guess.
-              13 There should be one-- and preferably only one --obvious way to do it.
-              14 Although that way may not be obvious at first unless you're Dutch.
-              15 Now is better than never.
-              16 Although never is often better than *right* now.
-              17 If the implementation is hard to explain, it's a bad idea.
-              18 If the implementation is easy to explain, it may be a good idea.
-              19 Namespaces are one honking great idea -- let's do more of those!
+              ### Pythonはどんな言語？
+              >* Readability counts.
+              >* There should be one-- and preferably only one --obvious way to do it.
+              >
+              >[The Zen of Python](https://www.python.org/dev/peps/pep-0020/)より一部抜粋
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Pythonはどんな言語？
+              * このような開発方針があるため、コードが読みやすく誰が書いても同じようなコードになり可読性や保守性がとても良い。
+              * [PEP(Python Enhancement Proposals)8](https://www.python.org/dev/peps/pep-0008/)にはPythonのコーディング規約が書かれているので、絶対に読むべき。[(日本語訳)](http://pep8-ja.readthedocs.org/ja/latest/)
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Pythonは覚えやすい？
+              #### 予約語が少ない
+              ```text
+              False      class      finally    is         return
+              None       continue   for        lambda     try
+              True       def        from       nonlocal   while
+              and        del        global     not        with
+              as         elif       if         or         yield
+              assert     else       import     pass
+              break      except     in         raise
+              ```
+              * [Python3.5.1](https://docs.python.org/3/reference/lexical_analysis.html#keywords) $\cdots$ 33語
+              * [Ruby2.3.0](http://docs.ruby-lang.org/ja/2.3.0/doc/spec=2flexical.html) $\cdots$ 41語
+              * [JavaSE8](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html) $\cdots$ 50語
+              * [C++14](http://en.cppreference.com/w/) $\cdots$ 66語
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Pythonは人気？
+              ||1|2|3|4|5|
+              |:-:|:-:|:-:|:-:|:-:|:-:|
+              |[TIOBE](http://www.tiobe.com/tiobe_index)|Java|C|C++|C#|<font color="yellow">Python</font>|
+              |[PYPL Index](http://pypl.github.io/PYPL.html)|Java|<font color="yellow">Python</font>|PHP|C#|Javascript|
+              |[Devpost](http://studenthackers.devpost.com/)|HTML/CSS|Javascript|<font color="yellow">Python</font>|Java|C/C++|
+              |[GitHub](https://github.com/search?q=stars%3A%3E1&s=stars&type=Repositories)|Javascript|<font color="yellow">Python</font>|Java|Ruby|PHP|
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### Pythonは人気？
+              * PythonはC++、Javaと並ぶGoogle公式言語の一つ
+                * [Python at Google](http://quintagroup.com/cms/python/google)
+              * YoutubeもPythonを使っている
+                * [Quotes about Python](https://www.python.org/about/quotes/)
+              * NASAなどの研究機関でも使われている
+                * [https://github.com/nasa](https://github.com/nasa)
             </script>
           </section>
         </section>
@@ -96,6 +139,9 @@
           <section data-markdown>
             <script type="text/template">
               ## Pythonプログラムの実行
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
             </script>
           </section>
           <section data-markdown>
@@ -166,6 +212,9 @@
           <section data-markdown>
             <script type="text/template">
               ## タイプとオブジェクト
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
             </script>
           </section>
           <section data-markdown>
@@ -409,6 +458,9 @@
           <section data-markdown>
             <script type="text/template">
               ## 制御文
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
             </script>
           </section>
 
@@ -541,6 +593,9 @@
           <section data-markdown>
             <script type="text/template">
               ## 関数オブジェクト
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
             </script>
           </section>
           <section data-markdown>
@@ -584,6 +639,9 @@
           <section data-markdown>
             <script type="text/template">
               ## その他
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
             </script>
           </section>
           <section data-markdown>
@@ -833,6 +891,100 @@
               >>> a
               [0, 1, 2, 3, 4]
               ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## 演習
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 問題
+              * 1から100までの整数を表示する。
+              * ただし、3の倍数または3を含む整数の場合には数字の代わりに"San!"と出力する。
+
+              出力
+              ```shell
+              1
+              2
+              San!
+              4
+              5
+              San!
+              7
+              8
+              San!
+              10
+              ...
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 解答例
+              ```python
+              >>> for i in range(1, 101):
+              ...     if i % 3 == 0 or "3" in str(i):
+              ...         print("San!")
+              ...     else:
+              ...         print(i)
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 問題
+              * 初めに整数Nを入力する。
+              * その後N個の整数を入力し、各数に1を加えた値を『,␣(カンマ+スペース)』区切りで出力する。
+              * できる人は、lambda式を使ってみよう。
+
+              入力
+              ```shell
+              3
+              1
+              3
+              7
+              ```
+              出力
+              ```shell
+              2, 4, 8
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### 解答例
+              ```python
+              n = int(input())
+              l = []
+              for _ in range(n):
+                  l.append(input())
+              print(", ".join(map(lambda x: str(int(x) + 1), l)))
+              ```
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              ## まとめ
+              <sapn style="float: right; padding-top: 200px;">
+              ![](./img/python.png)
+              </span>
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ## まとめ
+              # Pythonを書こう！！
             </script>
           </section>
         </section>
